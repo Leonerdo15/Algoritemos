@@ -1,0 +1,20 @@
+package Baralho;
+
+import java.util.ArrayList;
+
+public class PokerTable {
+    public static void main(String[] args) {
+        Player player1 = new Player("Leonardo");
+        Player player2 = new Player("Felipe");
+
+        ArrayList<Player> players = new ArrayList<>();
+
+        players.add(player1);
+        players.add(player2);
+
+        Poker poker = new Poker(players);
+
+        poker.play();
+
+    }
+}

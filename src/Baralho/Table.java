@@ -4,17 +4,24 @@ public class Table {
     public static void main(String[] args) {
         Deck deck = new Deck();
 
-        System.out.println(deck);
-
-        deck.Shuffle();
+        deck.changeValueCard(Value.ACE, 1);
 
         System.out.println(deck);
 
-        System.out.println(deck.getDeck().get(51).getCor());
+        // Baralhar o deck
+
+        deck.shuffle();
+
+        deck.orderDeck();
+        System.out.println(deck);
+
+        System.out.println(deck.getDeck().get(51).getColor());
         System.out.println(deck.getDeck().get(51).getNaipe());
         System.out.println(deck.getDeck().get(51).getName());
         System.out.println(deck.getDeck().get(51).getValue());
 
+
+        // Simulaçao de jogo Carta mais alta
 
         System.out.println("\n\n\n");
         Player player1 = new Player("Antunes");

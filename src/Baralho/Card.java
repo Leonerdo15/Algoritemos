@@ -1,15 +1,19 @@
 package Baralho;
 
-public class Card {
+public class Card implements Comparable {
     private Naipe naipe;
-    private Valor name;
+    private Value name;
     private int value;
 
 
-    public Card(Valor name,Naipe naipe, int value) {
+    public Card(Value name, Naipe naipe, int value) {
         this.naipe = naipe;
         this.name = name;
         this.value = value;
+    }
+
+    public Card() {
+
     }
 
 
@@ -21,11 +25,11 @@ public class Card {
         this.naipe = naipe;
     }
 
-    public Valor getName() {
+    public Value getName() {
         return name;
     }
 
-    public void setName(Valor name) {
+    public void setName(Value name) {
         this.name = name;
     }
 
@@ -37,21 +41,28 @@ public class Card {
         this.value = value;
     }
 
-    public String getCor(){
-        if(naipe.equals(Naipe.Hearts) || naipe.equals(Naipe.Diamonds)){
-            return "Red";
-        } else {
-            return "Black";
-        }
+    public String getColor(){
+        return naipe.getColor();
+    }
+
+    public void changeCard(Card card){
+
     }
 
 
     @Override
     public String toString() {
-        return "Card{" +
-                "naipe=" + naipe +
-                ", name=" + name +
-                ", value=" + value +
-                '}' + "\n";
+        return name + " of " + naipe + "\n";
     }
+
+    @Override
+    public int compareTo(Object card) {
+        int compareValue=((Card)card).getValue();
+        /* For Ascending order*/
+        return this.value-compareValue;
+
+        /* For Descending order do like this */
+        //return compareage-this.studentage;
+    }
+
 }

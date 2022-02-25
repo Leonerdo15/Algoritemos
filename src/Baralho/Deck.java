@@ -1,17 +1,18 @@
 package Baralho;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Deck {
 
     private ArrayList<Card> deck;
-    private Valor[] orderDeck;
+    private Value[] orderDeck;
 
 
     public Deck() {
-        Valor[] orderDeck = {Valor.TWO, Valor.TREE, Valor.FOUR, Valor.FIVE, Valor.SIX, Valor.SEVEN, Valor.EIGHT,
-        Valor.NINE, Valor.TEN, Valor.JACK, Valor.QUEEN, Valor.KING, Valor.ACE};
+        Value[] orderDeck = {Value.TWO, Value.TREE, Value.FOUR, Value.FIVE, Value.SIX, Value.SEVEN, Value.EIGHT,
+        Value.NINE, Value.TEN, Value.JACK, Value.QUEEN, Value.KING, Value.ACE};
 
         Naipe[] orderNaipe = {Naipe.Diamonds, Naipe.Clubs, Naipe.Hearts, Naipe.Spades};
 
@@ -34,6 +35,11 @@ public class Deck {
 
     }
 
+    public Deck(ArrayList<Card> cards){
+        deck = new ArrayList<>();
+        deck.addAll(cards);
+    }
+
     public ArrayList<Card> getDeck() {
         return deck;
     }
@@ -42,20 +48,27 @@ public class Deck {
         this.deck = deck;
     }
 
-    public Valor[] getOrderDeck() {
+    public Value[] getOrderDeck() {
         return orderDeck;
     }
 
-    public void setOrderDeck(Valor[] orderDeck) {
+    public void setOrderDeck(Value[] orderDeck) {
         this.orderDeck = orderDeck;
     }
 
+    public void addCard(Card card){
+        deck.add(card);
+    }
 
-    public void Shuffle(){
+    public void removeCard(Card card){
+        deck.remove(card);
+    }
+
+    public void shuffle(){
         Random number = new Random();
 
         int card;
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000; i++) {
             Card temp;
             card = number.nextInt(52);
             temp = deck.get(card);
@@ -64,10 +77,20 @@ public class Deck {
         }
     }
 
+    public void orderDeck(){
+        Collections.sort(deck);
+    }
+
+    public void changeValueCard(Value valor, int weight){
+        valor.setValue(weight);
+    }
+
     @Override
     public String toString() {
         return "Deck{" +
                 "deck=" + deck +
                 '}';
     }
+
+
 }

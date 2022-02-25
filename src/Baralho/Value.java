@@ -1,6 +1,6 @@
 package Baralho;
 
-public enum Valor {
+public enum Value {
     TWO(2),
     TREE(3),
     FOUR(4),
@@ -15,11 +15,9 @@ public enum Valor {
     KING(13),
     ACE(14);
 
-
-
     private int value;
 
-    Valor(int value) {
+    Value(int value) {
         this.value = value;
     }
 
