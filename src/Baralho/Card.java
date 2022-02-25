@@ -4,6 +4,7 @@ public class Card {
     private Naipe naipe;
     private Valor name;
     private int value;
+    private static boolean figura = false;
 
 
     public Card(Valor name,Naipe naipe, int value) {
