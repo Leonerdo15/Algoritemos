@@ -7,7 +7,7 @@ public class Deck {
 
     private ArrayList<Card> deck;
     private Valor[] orderDeck;
-    private Naipe[] orderNaipe;
+
 
     public Deck() {
         Valor[] orderDeck = {Valor.TWO, Valor.TREE, Valor.FOUR, Valor.FIVE, Valor.SIX, Valor.SEVEN, Valor.EIGHT,
