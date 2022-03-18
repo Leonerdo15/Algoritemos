@@ -1,4 +1,4 @@
-package Baralho;
+package Aula.Ex1;
 
 public class GameHighCard {
     private Player player1;

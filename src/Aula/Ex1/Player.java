@@ -1,6 +1,4 @@
-package Baralho;
-
-import Baralho.Card;
+package Aula.Ex1;
 
 import java.util.ArrayList;
 

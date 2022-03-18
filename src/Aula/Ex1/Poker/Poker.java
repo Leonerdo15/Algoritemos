@@ -1,4 +1,7 @@
-package Baralho;
+package Aula.Ex1.Poker;
+
+import Aula.Ex1.Deck;
+import Aula.Ex1.Player;
 
 import java.util.ArrayList;
 
@@ -7,6 +10,10 @@ public class Poker {
     private ArrayList<Player> players;
 
     public Poker(ArrayList<Player> players) {
+
+        assert players.size() > 1 : "Tem que haver mais que um jogador";
+        assert players.size() < 6 : "So pode ter 5 jogadores no maximo";
+
         deck = new Deck();
         deck.shuffle();
         this.players = players;
@@ -15,6 +22,10 @@ public class Poker {
     }
 
     public void play(){
+        Deck cardsGame = new Deck();
+        cardsGame.getDeck().removeAll(cardsGame.getDeck());
+
+        // add card for all players
         for (int i = 0; i < 2; i++) {
             for (Player player: players) {
                 player.addCard(deck.getDeck().get(0));
@@ -25,6 +36,15 @@ public class Poker {
         for (Player player: players) {
             System.out.println("" + player.getNome() + " -> "+ player.getCards() + "\n");
         }
+
+        // add card for table
+        for (int i = 0; i < 5; i++) {
+            cardsGame.addCard(deck.getDeck().get(0));
+            deck.removeCard(deck.getDeck().get(0));
+        }
+
+        System.out.println(cardsGame);
+
 
         resetDeck();
         for (Player player: players) {

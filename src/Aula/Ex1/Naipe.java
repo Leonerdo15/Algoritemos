@@ -1,4 +1,4 @@
-package Baralho;
+package Aula.Ex1;
 
 public enum Naipe {
     Diamonds("Red"),

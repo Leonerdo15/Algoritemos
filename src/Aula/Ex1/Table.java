@@ -1,4 +1,4 @@
-package Baralho;
+package Aula.Ex1;
 
 public class Table {
     public static void main(String[] args) {
@@ -12,7 +12,9 @@ public class Table {
 
         deck.shuffle();
 
-        deck.orderDeck();
+//        deck.orderDeck();
+
+
         System.out.println(deck);
 
         System.out.println(deck.getDeck().get(51).getColor());

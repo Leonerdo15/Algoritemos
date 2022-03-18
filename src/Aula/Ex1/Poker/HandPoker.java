@@ -1,4 +1,6 @@
-package Baralho;
+package Aula.Ex1.Poker;
+
+import Aula.Ex1.Deck;
 
 public enum HandPoker {
     HIGH_CARD(1),
@@ -12,14 +14,14 @@ public enum HandPoker {
     STRAIGHT_FLUSH(9),
     ROYAL_FLUSH(10);
 
-    private int valor;
+    private int value;
 
-    HandPoker(int valor) {
-        this.valor = valor;
+    HandPoker(int value) {
+        this.value = value;
     }
 
-    public int getValor() {
-        return valor;
+    public int getValue() {
+        return value;
     }
 
     public boolean isPair(Deck deck){

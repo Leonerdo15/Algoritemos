@@ -1,4 +1,6 @@
-package Baralho;
+package Aula.Ex1.Poker;
+
+import Aula.Ex1.Player;
 
 import java.util.ArrayList;
 

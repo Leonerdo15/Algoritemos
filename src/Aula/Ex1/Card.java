@@ -1,4 +1,4 @@
-package Baralho;
+package Aula.Ex1;
 
 public class Card implements Comparable {
     private Naipe naipe;

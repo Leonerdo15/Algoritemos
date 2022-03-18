@@ -1,4 +1,4 @@
-package Baralho;
+package Aula.Ex1;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,9 +66,8 @@ public class Deck {
 
     public void shuffle(){
         Random number = new Random();
-
         int card;
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 200; i++) {
             Card temp;
             card = number.nextInt(52);
             temp = deck.get(card);
